@@ -10,16 +10,20 @@ export default class ImageContainer extends Component {
         this.state = { images: [] };
     }
 
-    imageCloseHandler = () => {
-        console.log("close image frame");
-        // remove from the state
+    imageCloseHandler = (id) => {
+        let images = this.state.images;
+        const remainingImages = images.filter(image => image.id !== id);
+        this.setState({ images: remainingImages });
     }
 
     renderColumn = () => {
         return this.state.images.map(image => {
             return (
-                <Grid.Column>
-                    <ImageFrame onCloseImage={this.imageCloseHandler} />
+                <Grid.Column key={image.id}>
+                    <ImageFrame
+                        data={image}
+                        onCloseImage={this.imageCloseHandler}
+                    />
                 </Grid.Column>
             )
         })
@@ -28,9 +32,7 @@ export default class ImageContainer extends Component {
     handleUploadImage = (img) => {
         const images = this.state.images;
         images.push(img);
-        this.setState({ images: images });
-        console.log(images);
-        this.renderColumn();
+        this.setState({ images });
     };
 
     render() {
