@@ -22,3 +22,21 @@
     padding: 2px;
     margin-left: 1em;
 }
+
+.innerImage {
+    width: 375px;
+    height: 300px;
+    margin-left: 0.7em; 
+    margin-top: 0.7em;
+    border: 1px solid green;
+}
+
+.imageControls {
+    padding: 0.3em;
+    margin: 0 0.3em;
+}
+
+.closeIcon {
+    float: right;
+    cursor: pointer;
+}

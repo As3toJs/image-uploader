@@ -4,8 +4,11 @@ import './UploadImage.css';
 
 const UploadImage = (props) => {
     const uploadButtonClicked = (e) => {
-        console.log("upload image button", props);
-        props.uploadImageHandler("add-img");
+        const randNumber = Math.floor((Math.random() * 100) + 1);
+        props.uploadImageHandler({
+            id: `image-id-${randNumber}`,
+            ur: 'image-url'
+        });
     }
 
     return (
