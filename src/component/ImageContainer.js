@@ -29,9 +29,9 @@ export default class ImageContainer extends Component {
         })
     }
 
-    handleUploadImage = (img) => {
+    handleUploadImage = (imageObject) => {
         const images = this.state.images;
-        images.push(img);
+        images.push(imageObject);
         this.setState({ images });
     };
 
