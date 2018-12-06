@@ -5,6 +5,6 @@ upload a image and display in a frame
 
 # if node is not installed  => install node
 
-# npm instll
+# npm install
 
 # npm start
